@@ -1,0 +1,6 @@
+Django==4.2.*
+
+ariadne==0.23.0
+ariadne-django==0.3.0
+
+ipython==8.23.0

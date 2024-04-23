@@ -1,0 +1,21 @@
+
+type Wine @key(fields: "id") {
+    id: ID!
+}
+
+type Beer @key(fields: "id") {
+    id: ID!
+}
+
+union Drink = Wine | Beer
+
+type Food @key(fields: "id") {
+    id: ID!
+    name: String
+    description: String
+    bestWith: Drink
+}
+
+type Query {
+    foods: [Food]
+}

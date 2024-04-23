@@ -1,0 +1,15 @@
+federation_version: =2.4.7
+
+# https://www.apollographql.com/docs/rover/commands/dev
+# rover dev  --supergraph-config supergraph.yaml
+subgraphs:
+
+  food:
+    routing_url: http://localhost:8000/food/graphql
+    schema:
+      file: ./subs/food/schema.graphql
+
+  wine:
+    routing_url: http://localhost:8000/wine/graphql
+    schema:
+      file: ./subs/wine/schema.graphql

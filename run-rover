@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# https://www.apollographql.com/docs/rover/getting-started/
+#
+rover dev --supergraph-config supergraph.yaml

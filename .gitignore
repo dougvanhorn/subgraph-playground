@@ -1,0 +1,10 @@
+# Virtual Environments
+ve/*
+
+# Database
+*.sqlite3
+
+
+# Python
+__pycache__
+.python-version
