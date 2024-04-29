@@ -25,15 +25,15 @@ import subs.wine.graphql
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path(
-        'food/graphql',
-        GraphQLView.as_view(schema=subs.food.graphql.schema),
-        name='food-graphql',
-    ),
+    # path(
+    #     'food/graphql',
+    #     GraphQLView.as_view(schema=subs.food.graphql.schema),
+    #     name='food-graphql',
+    # ),
 
-    path(
-        'wine/graphql',
-        GraphQLView.as_view(schema=subs.wine.graphql.schema),
-        name='wine-graphql',
-    ),
+    # path(
+    #     'wine/graphql',
+    #     GraphQLView.as_view(schema=subs.wine.graphql.schema),
+    #     name='wine-graphql',
+    # ),
 ]
