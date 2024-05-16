@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'ariadne_django',
     'subs.food',
     'subs.wine',
 ]

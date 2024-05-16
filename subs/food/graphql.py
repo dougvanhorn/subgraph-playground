@@ -62,6 +62,10 @@ Query = ariadne.ObjectType("Query")
 
 @Query.field("foods")
 def resolve_foods(root, gqlinfo, **kwargs):
+    print('ROOT', root)
+    import pdb; pdb.set_trace()
+    print('GQLINFO', gqlinfo)
+    print(dir(gqlinfo))
     return list(FOOD_DB.values())
 
 
