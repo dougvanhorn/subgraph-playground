@@ -75,7 +75,6 @@ Wine = federation.FederatedObjectType('Wine')
 
 @Beer.reference_resolver
 def beer_reference_resolver(root, gqlinfo, representation):
-    print('BEER_REPRESENTATION', representation)
     beer_id = representation.get('id', '')
     beer = BEER_DB.get(beer_id)
     if beer is None:
@@ -85,7 +84,6 @@ def beer_reference_resolver(root, gqlinfo, representation):
 
 @Wine.reference_resolver
 def wine_reference_resolver(root, gqlinfo, representation):
-    print('WINE_REPRESENTATION', representation)
     wine_id = representation.get('id', '')
     wine = WINE_DB.get(wine_id)
     if wine is None:
