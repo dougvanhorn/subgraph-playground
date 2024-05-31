@@ -12,6 +12,7 @@ FOOD_DB = {
         'bestWith': {
             '__typename': 'Wine',
             'id': '1',
+            'extra': 'This is extra data',
         },
     },
     '2': {
@@ -21,6 +22,7 @@ FOOD_DB = {
         'bestWith': {
             '__typename': 'Wine',
             'id': '2',
+            'extra': 'This is extra data',
         },
     },
     '3': {
@@ -30,6 +32,7 @@ FOOD_DB = {
         'bestWith': {
             '__typename': 'Beer',
             'id': '3',
+            'extra': 'This is extra data',
         },
     },
     '4': {
@@ -38,7 +41,8 @@ FOOD_DB = {
         'description': 'Fancy fish.',
         'bestWith': {
             '__typename': 'Beer',
-            'id': '9',
+            'id': '1',
+            'extra': 'This is extra data',
         },
     },
     '5': {
@@ -48,6 +52,7 @@ FOOD_DB = {
         'bestWith': {
             '__typename': 'Beer',
             'id': '2',
+            'extra': 'This is extra data',
         },
     },
 }
@@ -63,7 +68,6 @@ Query = ariadne.ObjectType("Query")
 @Query.field("foods")
 def resolve_foods(root, gqlinfo, **kwargs):
     print('ROOT', root)
-    import pdb; pdb.set_trace()
     print('GQLINFO', gqlinfo)
     print(dir(gqlinfo))
     return list(FOOD_DB.values())

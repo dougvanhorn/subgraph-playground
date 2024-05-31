@@ -3,7 +3,8 @@ type Wine @key(fields: "id") {
     id: ID!
     name: String
     description: String
-    abv: Float!
+    abv: Float
+    notes: String
 }
 
 
@@ -11,7 +12,8 @@ type Beer @key(fields: "id") {
     id: ID!
     name: String
     description: String
-    abv: Float!
+    abv: Float
+    ibu: Float
 }
 
 
