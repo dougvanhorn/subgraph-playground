@@ -11,7 +11,7 @@ FOOD_DB = {
         'description': 'Spiced pork and ham.',
         'bestWith': {
             '__typename': 'Wine',
-            'id': '1',
+            'id': 'signed:MQ==',
         },
     },
     '2': {
@@ -62,9 +62,6 @@ Query = ariadne.ObjectType("Query")
 
 @Query.field("foods")
 def resolve_foods(root, gqlinfo, **kwargs):
-    print('ROOT', root)
-    print('GQLINFO', gqlinfo)
-    print(dir(gqlinfo))
     return list(FOOD_DB.values())
 
 

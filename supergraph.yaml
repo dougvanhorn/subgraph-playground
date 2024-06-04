@@ -9,7 +9,7 @@ subgraphs:
     schema:
       file: ./subs/food/schema.graphql
 
-  wine:
-    routing_url: http://localhost:8000/wine/graphql
+  drink:
+    routing_url: http://localhost:8000/drink/graphql
     schema:
-      file: ./subs/wine/schema.graphql
+      file: ./subs/drink/schema.graphql

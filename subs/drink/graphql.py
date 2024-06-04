@@ -1,3 +1,4 @@
+import base64
 import pathlib
 
 import ariadne
@@ -75,7 +76,12 @@ Wine = federation.FederatedObjectType('Wine')
 
 @Beer.reference_resolver
 def beer_reference_resolver(root, gqlinfo, representation):
+    print('BEER REPRESENTATION', representation)
     beer_id = representation.get('id', '')
+
+    if beer_id.startswith('signed:'):
+        beer_id = base64.b64decode(beer_id[7:].decode('utf-8')).decode()
+
     beer = BEER_DB.get(beer_id)
     if beer is None:
         print(f'No beer found for {beer_id}.')
@@ -84,10 +90,18 @@ def beer_reference_resolver(root, gqlinfo, representation):
 
 @Wine.reference_resolver
 def wine_reference_resolver(root, gqlinfo, representation):
+    print('WINE REPRESENTATION', representation)
     wine_id = representation.get('id', '')
+
+    if wine_id.startswith('signed:'):
+        print('WINE ID', wine_id)
+        wine_id = base64.b64decode(wine_id[7:].encode()).decode()
+
     wine = WINE_DB.get(wine_id)
+
     if wine is None:
         print(f'No wine found for {wine_id}.')
+
     return wine
 
 
